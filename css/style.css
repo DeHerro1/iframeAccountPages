@@ -1,9 +1,81 @@
+/* import fonts */
+@font-face {
+  font-family: 'montserrat';
+  src: url('../font/Montserrat/static/Montserrat-Regular.ttf');
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('../font/Poppins/Poppins-Regular.otf');
+}
+
 body {
   background-color: rgb(246, 246, 246) !important;
 }
+select:focus
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='email']:focus,
+input[type='number']:focus,
+[type='text'].form-control:focus,
+[type='password'].form-control:focus,
+[type='email'].form-control:focus,
+[type='tel'].form-control:focus,
+[contenteditable].form-control:focus {
+  box-shadow: none;
+  outline: none;
+  border: 1px solid #9e2140;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #9F9F9F;
+}
+::placeholder, select,select option {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #9F9F9F;
+}
+.already {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: #000000;
+  margin-top: 2em;
+}
+.warn {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #000000;
+}
+.forgot {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #000000;
+  float: right
+}
+.already a,.already a:hover, .forgot a, .forgot a:hover, .forgot a:focus, .forgot a:active {
+  color: #9e2140;
+}
 .register,
 .login {
-  width: 50%;
+  width: 690px;
+  max-width: 690px;
   margin: 0 auto;
   padding: 40px 0 0;
   text-align: center;
@@ -12,48 +84,107 @@ body {
 .account_header {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 2em;
+  margin-top: 2em;
 }
 
 .user_toggle {
   background: #9e2140;
-  border-radius: 30px;
-  padding: 10px;
-  width: 120px;
+  border-radius: 37px;
+  width: 110px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 5px;
 }
 .user_toggle > i {
   color: white;
   font-size: 25px;
   padding: 5px;
   font-weight: 800 !important;
+  cursor: pointer;
 }
 .selected_icon {
   color: black !important;
   border-radius: 100%;
-  width: 50%;
-
+  width: 40px;
+  height: 40px;
   background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.account_header > h2 {
+.account_header > h2,.login_header {
   padding-top: 10px;
+  font-family: 'Poppins';
+  font-style: normal;
   font-weight: 700;
-  color: #9e2140;
+  font-size: 25px;
+  line-height: 36px;
+  text-align: center;
+  color: #9E2140;
 }
+
+.contiue {
+  padding-top: 10px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+  color: #000000;
+}
+
 span {
   color: #9e2140;
 }
-.input {
+.input, select {
   background: #d9d9d9 !important;
   height: 60px !important;
 }
-
+select {
+  width: 100%;
+  border:none;
+  outline:none;
+  border-radius: 0.25rem;
+  padding: 16px;
+  line-height: 2em;
+}
+option{
+  border: none;
+  outline: none;
+  padding: 15px 0px;
+}
+.btn-container{
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .register_btn {
   background: #9e2140 !important;
-  padding: 10px 40px !important;
-  color: white !important;
+  height: 50px;
+  width: 200px;
+  max-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline:none;
+  border:none;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #FFFFFF!important;
 }
-
+.register_btn:hover, .register_btn:active{
+  outline:none;
+  border:none;
+}
 .entity_form_container {
   display: flex;
   justify-content: space-between;
@@ -65,15 +196,15 @@ span {
 
 .footer {
   display: flex;
-
   align-items: center;
   justify-content: center;
   padding: 20px 0;
+  margin-bottom: 1em;
 }
-.forgot_pass {
+/* .forgot_pass {
   display: flex !important;
   flex-direction: row !important;
-}
+} */
 #dashboard_section {
   width: 70%;
   padding: 60px 0 40px;
@@ -98,16 +229,23 @@ span {
   color: #9e2140;
   font-size: 32px;
 }
-
+.footer p{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
 @media (max-width: 768px) {
-  .register {
+  .register,.login{
     width: 80%;
   }
   /* .login {
     width
   } */
 }
-@media (max-width: 425px) {
+@media (max-width: 500px) {
   .register,
   .login {
     width: 100%;
@@ -119,12 +257,36 @@ span {
     flex-direction: column;
   }
   .account_header {
-    justify-content: space-between;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    margin-bottom: 1em;;
+  }
+  .user_toggle{
+    margin-bottom: 1em;
+  }
+  .account_header h2{
+    font-size: 20px;
+    line-height: 22px;
+  }
+  .user_toggle > i {
+    font-size: 20px;
+  }
+  .selected_icon {
+    width: 35px;
+    height: 35px;
+  }
+  .user_toggle {
+    width: 100px;
   }
   #section_items {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
   .account_header > h2 {
     padding-right: 20px;
+  }
+  .forgot{
+    margin-bottom: 1em!important;
   }
 }
